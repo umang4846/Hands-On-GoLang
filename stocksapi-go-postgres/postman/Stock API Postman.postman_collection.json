@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "45587dea-e9b5-4124-b40e-4db53fa1376f",
+		"name": "Stock API Postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21679099"
+	},
+	"item": [
+		{
+			"name": "GET stock by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9900/api/stock/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9900",
+					"path": [
+						"api",
+						"stock",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All stocks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"betTimestamp\": {\r\n        \"from\": \"0001-01-01T00:00:00Z\",\r\n        \"to\": \"9999-12-12T23:59:59Z\"\r\n    },\r\n    \"betStatuses\": [\r\n        \"VOID\"\r\n    ],\r\n    \"brandIds\": [\r\n        \"pp\"\r\n    ],\r\n    \"sortBy\": [\r\n        \"-placedon\"\r\n    ],\r\n    \"playerIds\": [\r\n        \"ankush\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9900/api/stock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9900",
+					"path": [
+						"api",
+						"stock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Add new Stock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"stock3\",\r\n    \"price\": \"123\",\r\n    \"company\":\"Jindal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9900/api/newstock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9900",
+					"path": [
+						"api",
+						"newstock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Update Stock",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"SS\",\r\n    \"price\": \"65\",\r\n    \"company\":\"ZOMATO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9900/api/stock/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9900",
+					"path": [
+						"api",
+						"stock",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Stock",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"SS\",\r\n    \"price\": \"65\",\r\n    \"company\":\"ZOMATO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9900/api/deletestock/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9900",
+					"path": [
+						"api",
+						"deletestock",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
