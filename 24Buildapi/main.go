@@ -23,6 +23,11 @@ type Author struct {
 	FullName string `json:"fullname"`
 	Website  string `json:"website"`
 }
+type DisableMultiples struct {
+	MarketID       string          `json:"marketId"`
+	MarketTypeID   string          `json:"marketType"`
+	DisabledBrands map[string]bool `json:"disableBrands"`
+}
 
 //fake DB
 var courses []Course
