@@ -50,6 +50,14 @@ func CreateStock(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(res)
 }
 
+func TestToDelete(w http.ResponseWriter, r *http.Request) {
+	res := response{
+		ID:      200,
+		Message: "Success",
+	}
+	json.NewEncoder(w).Encode(res)
+}
+
 func GetStock(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	id, err := strconv.Atoi(params["id"])

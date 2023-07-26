@@ -10,7 +10,7 @@ import (
 
 func main() {
 	r := router.Router()
-	fmt.Println("Starting server on port 9900...")
+	fmt.Println("Starting server on port 8000...")
 
-	log.Fatal(http.ListenAndServe(":9900", r))
+	log.Fatal(http.ListenAndServe(":8000", r))
 }
