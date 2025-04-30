@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/golang-jwt/jwt/v5"
 	"time"
 )
 
@@ -15,24 +14,17 @@ func generateToken() (string, error) {
 	claims := jwt.MapClaims{
 		"key_id":   secretKeyID,
 		"exp":      exp,
-		"event_id": "eaf71acd-9262-400a-8095-c3a60171c6cb",
-		"ip":       "81.196.86.120",
+		"event_id": "30c1d59e-49eb-42cf-bb6a-6684aa92d4c8",
+		"ip":       "1.2.3.4",
 		"sub":      "abcdef123456",
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 
-	tk, err := token.SignedString([]byte(secretKey))
+	token, err := token.SignedString([]byte(secretKey))
 	if err != nil {
 		return "", err
 	}
-	fmt.Println(tk)
-	return tk, nil
-}
-
-func main() {
-	_, err := generateToken()
-	if err != nil {
-		return
-	}
+	fmt.Println(token)
+	return token, nil
 }
